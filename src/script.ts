@@ -55,3 +55,22 @@ li2.textContent = "2st li";
 ul.append(li2);
 section.append(ul);
 mainTag.append(section);
+
+// Click Event(option1)
+function directFunction() {
+  console.log("Direct Function Added");
+}
+
+// Click Event(option2)
+const addColor = document.querySelector("#add-color") as HTMLButtonElement;
+addColor.onclick = addGrey;
+function addGrey() {
+  document.body.style.backgroundColor = "gray";
+}
+
+// Click Event(option3)
+const btnClick = document.querySelector("#btn-click") as HTMLButtonElement;
+
+btnClick.addEventListener("click", () => {
+  console.log("clicked");
+});
