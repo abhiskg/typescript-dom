@@ -93,3 +93,19 @@ focusBlur.addEventListener("blur", () => {
 focusBlur.addEventListener("keyup", (e) => {
     console.log(e.target.value);
 });
+// Github Delete like Button
+const deleteField = document.querySelector("#delete-field");
+const deleteBtn = document.querySelector("#delete-btn");
+deleteField.addEventListener("keyup", (e) => {
+    const inputData = e.target.value;
+    if (inputData.toLowerCase() == "delete") {
+        deleteBtn.removeAttribute("disabled");
+    }
+    else {
+        deleteBtn.setAttribute("disabled", "");
+    }
+});
+deleteBtn.addEventListener("click", () => {
+    const deleteText = document.querySelector("#delete-text");
+    deleteText.style.display = "none";
+});
