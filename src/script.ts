@@ -107,3 +107,21 @@ addComment.addEventListener("click", () => {
   commentContainer.append(newComment);
   commentField.value = "";
 });
+
+// Focus/ blur /Keyup
+const focusBlur = document.querySelector("#focus-blur") as HTMLInputElement;
+focusBlur.addEventListener("focus", () => {
+  console.log("On Focused");
+});
+focusBlur.addEventListener("blur", () => {
+  console.log("Focus Removed");
+});
+// focusBlur.addEventListener("keydown", (e) => {
+//   console.log((e.target as HTMLInputElement).value);
+// });
+// focusBlur.addEventListener("keypress", (e) => {
+//   console.log((e.target as HTMLInputElement).value);
+// });
+focusBlur.addEventListener("keyup", (e) => {
+  console.log((e.target as HTMLInputElement).value);
+});
