@@ -56,3 +56,23 @@ const btnClick = document.querySelector("#btn-click");
 btnClick.addEventListener("click", () => {
     console.log("clicked");
 });
+// Update text from input field
+const updateBtn = document.querySelector("#update-btn");
+updateBtn.addEventListener("click", () => {
+    const inputText = document.querySelector("#input-text");
+    const newValue = inputText.value;
+    const updateText = document.querySelector("#update-text");
+    updateText.textContent = newValue;
+    inputText.value = "";
+});
+// Add comment
+const addComment = document.querySelector("#btn-addComment");
+addComment.addEventListener("click", () => {
+    const commentField = (document.querySelector("#comment-field"));
+    const commentContainer = document.querySelector("#comment-container");
+    const commentText = commentField.value;
+    const newComment = document.createElement("p");
+    newComment.textContent = commentText;
+    commentContainer.append(newComment);
+    commentField.value = "";
+});

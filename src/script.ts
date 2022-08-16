@@ -74,3 +74,36 @@ const btnClick = document.querySelector("#btn-click") as HTMLButtonElement;
 btnClick.addEventListener("click", () => {
   console.log("clicked");
 });
+
+// Update text from input field
+
+const updateBtn = document.querySelector("#update-btn") as HTMLButtonElement;
+
+updateBtn.addEventListener("click", () => {
+  const inputText = document.querySelector("#input-text") as HTMLInputElement;
+  const newValue = inputText.value;
+  const updateText = document.querySelector(
+    "#update-text"
+  ) as HTMLParagraphElement;
+  updateText.textContent = newValue;
+  inputText.value = "";
+});
+
+// Add comment
+const addComment = document.querySelector(
+  "#btn-addComment"
+) as HTMLButtonElement;
+
+addComment.addEventListener("click", () => {
+  const commentField = <HTMLTextAreaElement>(
+    document.querySelector("#comment-field")
+  );
+  const commentContainer = document.querySelector(
+    "#comment-container"
+  ) as HTMLParagraphElement;
+  const commentText = commentField.value;
+  const newComment = document.createElement("p");
+  newComment.textContent = commentText;
+  commentContainer.append(newComment);
+  commentField.value = "";
+});
